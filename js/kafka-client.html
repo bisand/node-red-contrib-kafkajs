@@ -91,6 +91,10 @@
 			<input type="checkbox" id="node-config-input-saslssl" style="display: inline-block; width: auto; vertical-align: top;">
 			<label for="node-config-input-saslssl" style="width: auto">Use SSL</label>
 		</div>
+		<div class="form-row">
+			<input type="checkbox" id="node-config-input-saslselfsign" style="display: inline-block; width: auto; vertical-align: top;">
+			<label for="node-config-input-saslselfsign" style="width: auto">Self Signed Cert</label>
+		</div>
 	</div>
 	<div class="form-row">
         <label for="node-config-input-advancedretry" style="display: inline-block; width: auto; vertical-align: top;"><i class="fa fa-clock-o"></i> Advanced Retry Options</label>
@@ -148,6 +152,7 @@
 
 			saslssl: { value: true, required: false },
 			saslmechanism: { value: 'plain', required: false },
+			saslselfsign: { value: false, required: false },
 
 			loglevel: { value: "error", required: true },
 		},
