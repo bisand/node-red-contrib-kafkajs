@@ -40,15 +40,12 @@ module.exports = function(RED) {
         }
 
         else if(config.auth == 'sasl'){
-            options.ssl = config.saslssl ? {} : false;
+            options.ssl = config.saslssl ? { rejectUnauthorized: !config.saslselfsign } : false;
 
             options.sasl = new Object();
             options.sasl.mechanism = config.saslmechanism || 'plain';
             options.sasl.username = node.credentials.saslusername;
             options.sasl.password = node.credentials.saslpassword;
-            if(config.saslssl){
-                options.ssl.rejectUnauthorized = !config.saslselfsign;
-            }
         }
     
         node.options = options;
